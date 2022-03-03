@@ -15,6 +15,18 @@
       this.place = place;
     }
 
-    
+    let amarObj = new createObject("Amar", "Singer", "Goa")
+    let akbarObj = new createObject("Akbar", "Chef", "Mumbai")
+    let anthonyObj = new createObject("Anthony", "Magician", "Kashmir")
+    console.log(akbarObj)
+
+    function borrowSkills(food, travel){
+        console.log(`My name is ${this.name} & I am a ${this.skill}. I love ${food} and ${travel}`)
+    }
+
+
+    borrowSkills.call(anthonyObj,"Jalebi", "Delhi")
+    borrowSkills.call(akbarObj,"Fafda", "Rajasthan")
+
   </script>
 </html>
