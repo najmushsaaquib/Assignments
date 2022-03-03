@@ -1,0 +1,43 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#container{
+    height: 400px;
+    width: 350px;
+    margin: 50px auto;
+    background: rgb(203, 217, 219);
+    position: relative;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+#form-container{
+    position: absolute;
+    top: 20%;
+    left: 20%;
+
+}
+
+h2{
+    position: absolute;
+    left:10%;
+    top:5%;
+}
+
+label{
+    margin: 14px 2px;
+}
+
+input{
+    margin: 8px 2px;
+    outline: none;
+    border: none;
+    width: 190px;
+    height: 29px;
+    border-radius: 3px;
+    padding-left: 6px;
+}
