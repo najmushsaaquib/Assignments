@@ -26,6 +26,8 @@ function formSubmit(event){
 
     localStorage.setItem("studentData", JSON.stringify(arrData))
 
+    window.location.href = "display.html"
+
     document.querySelector("#name").value = null
     document.querySelector("#number").value = null
     document.querySelector("#city").value = null

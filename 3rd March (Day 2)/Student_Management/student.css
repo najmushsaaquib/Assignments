@@ -41,3 +41,7 @@ input{
     border-radius: 3px;
     padding-left: 6px;
 }
+
+#submit{
+    cursor: pointer;
+}

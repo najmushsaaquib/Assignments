@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Display Data</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      #table_div {
+        width: 70%;
+        background-color: tomato;
+        color: #fff;
+        margin: auto;
+        margin-top: 50px;
+        border-radius: 8px;
+      }
+
+      table {
+        width: 100%;
+        text-align: center;
+        border-radius: 8px;
+      }
+
+      thead {
+        font-size: 30px;
+        font-weight: bold;
+    }
+    
+   
+
+    tbody {
+        font-size: 25px;
+        background-color: rgb(206, 206, 206);
+        color: rgb(27, 27, 27);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="table_div">
+      <table>
+        <thead>
+          <tr>
+            <td>Name</td>
+            <td>Number</td>
+            <td>City</td>
+          </tr>
+        </thead>
+
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+  </body>
+
+  <script>
+    let arrData = JSON.parse(localStorage.getItem("studentData"));
+    console.log("arrData:", arrData);
+
+    display(arrData);
+
+    function display(arrData) {
+      arrData.map(function (el) {
+        let row = document.createElement("tr");
+
+        let col1 = document.createElement("td");
+        col1.innerHTML = el.name;
+        let col2 = document.createElement("td");
+        col2.innerHTML = el.number;
+        let col3 = document.createElement("td");
+        col3.innerHTML = el.city;
+
+        row.append(col1, col2, col3);
+        document.querySelector("#tbody").append(row);
+
+      });
+    }
+  </script>
+</html>
