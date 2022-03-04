@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+
+  <script>
+    // Call apply bind - hotel
+    //Object.create - own house
+
+    // flipkart products catalouge - nike
+
+    const nike = {
+      brand: "nike",
+      logo: "http://nike.com",
+      seller: "flipkart",
+    };
+
+    let shoe = Object.create(nike, {
+      name: { value: "Nike Dunk" },
+      price: { value: 2999 },
+    });
+
+    let shorts = Object.create(nike, {
+      name: { value: "Nike Dri=FIT" },
+      price: { value: 2895 },
+    });
+
+    console.log(shorts);
+  </script>
+</html>
