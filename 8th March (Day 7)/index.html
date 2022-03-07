@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <style>
+    button {
+      display: block;
+      margin: auto;
+      margin-top: 80px;
+      height: 35px;
+      width: 180px;
+      background: green;
+      color: white;
+      border: none;
+
+      cursor: pointer;
+    }
+
+    .content {
+      display: flex;
+      justify-content: center;
+    }
+  </style>
+
+  <body>
+    <div id="menu">
+      <!--Create Show Products button here, give id as "show_products". avoid making spelling mistakes in HTML id's-->
+
+      <button id="show_products">Show Products</button>
+    </div>
+
+    <div class="content">
+      <div>
+        <h2>Add Products</h2>
+        <form id="product_form">
+          <!--Create a form here to accept product data from user, give form HTML id as "product_form"-->
+
+          <!--Create four inputs to accept name, price, type and image-->
+          <!--give the inputs following respective id's, "name", "price","type","image"-->
+          <!--create a submit option to submit form, give it html id as "submit"-->
+          <input type="text" id="name" placeholder="Name" /> <br />
+          <input type="text" id="price" placeholder="Price" /> <br />
+          <label for="type">Type</label>
+          <select name="type" id="type">
+            <option value="Sneakers">Sneakers</option>
+            <option value="Sports">Sports</option>
+            <option value="Loafers">Loafers</option>
+            <option value="Slippers">Slippers</option>
+          </select>
+          <br />
+          <input type="text" id="image" placeholder="Image" /><br />
+          <input type="submit" id="submit" />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script src="./scripts/index.js"></script>
