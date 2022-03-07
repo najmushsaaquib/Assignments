@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+
+        button{
+            margin: 10px;
+            width: 150px;
+            background: rgb(37, 37, 37);
+            color: white;
+            height: 25px;
+            border:none;
+            cursor: pointer;
+        }
+    </style>
+
+  </head>
+  <body>
+
+    <div id="control">
+        <button onclick="start()" >Start</button>
+        <button  onclick="pause()" >Pause</button>
+    </div>
+
+    <div id="container"></div>
+  </body>
+
+  <script>
+
+    let id;
+
+    let i = 0;
+
+
+    function start() {
+
+
+    let images = JSON.parse(localStorage.getItem("images"));
+
+    container.innerHTML = null // So that only a sinle image append at a time
+        
+    
+
+      let img = document.createElement("img");
+      img.src = images[i];
+
+      container.append(img);
+    
+
+
+      id = setInterval(function callMe() {
+
+      if(i === images.length) i=0 // Making it a loop or kinda circular que
+        
+      let image = images[i]; // access of URL
+
+      container.innerHTML = null // So that only a sinle image append at a time
+
+      let img = document.createElement("img");
+      img.src = image;
+
+      container.append(img);
+
+      i++
+    }, 4000);
+
+    }
+
+    function pause() {
+
+        clearInterval(id)
+    }
+
+  </script>
+</html>
