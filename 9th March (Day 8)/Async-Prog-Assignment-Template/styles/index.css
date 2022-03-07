@@ -1,0 +1,84 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: Poppins, sans-serif;
+}
+
+body {
+  background: rgb(252, 252, 252); /* fallback for old browsers */
+}
+
+/*  ! Nav bar styles starts here. */
+#nav {
+  position: sticky;
+  top: 0;
+  width: 99%;
+  height: 86px;
+  background: #1d2b64; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #f8cdda,
+    #1d2b64
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #f8cdda,
+    #1d2b64
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  margin: auto;
+  border-radius: 3px;
+  display: flex;
+  justify-content: right;
+  gap: 20px;
+  font-family: Poppins;
+}
+
+.common {
+  width: 100px;
+  height: 10vh;
+  /* background-color: rgb(179, 62, 62); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+}
+
+span > a:link {
+  color: rgb(255, 255, 255);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+span > a:visited {
+  color: rgb(255, 255, 255);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+span > a:hover {
+  color: rgb(0, 0, 0);
+  background-color: transparent;
+  text-decoration: none;
+}
+/*  ! Nav bar styles ends here. */
+
+/* ! Slideshow styles starts here */
+#slideshow {
+  /* display: flex; */
+
+  width: 30%;
+  /* height: 350px; */
+  /* text-align: center; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  margin: auto;
+  margin-top: 25px;
+}
+
+#slideshow > img {
+  width: 100%;
+  height: 100%;
+}
+
+/* ! Slideshow styles starts here */

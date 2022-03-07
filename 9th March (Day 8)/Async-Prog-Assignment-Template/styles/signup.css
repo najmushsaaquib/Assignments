@@ -1,0 +1,139 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: Poppins, sans-serif;
+}
+
+body {
+  background: rgb(252, 252, 252); /* fallback for old browsers */
+}
+
+/*  ! Nav bar styles starts here. */
+#nav {
+  width: 99%;
+  height: 10vh;
+  background: #1d2b64; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #f8cdda,
+    #1d2b64
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #f8cdda,
+    #1d2b64
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  margin: auto;
+  margin-top: 4px;
+  border-radius: 3px;
+  display: flex;
+  justify-content: right;
+  gap: 20px;
+  font-family: Poppins;
+}
+
+.common {
+  width: 100px;
+  height: 10vh;
+  /* background-color: rgb(179, 62, 62); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+}
+
+span > a:link {
+  color: rgb(255, 255, 255);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+span > a:visited {
+  color: rgb(255, 255, 255);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+span > a:hover {
+  color: rgb(0, 0, 0);
+  background-color: transparent;
+  text-decoration: none;
+}
+/*  ! Nav bar styles ends here. */
+
+#form-box {
+  width: 350px;
+  background-color: white;
+  margin: 3% auto;
+  padding: 20px 0px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 9px;
+}
+
+#form-box > h1 {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.input-box {
+  margin: 10px auto;
+  width: 80%;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid black;
+}
+
+.input-box input {
+  width: 80%;
+  border: none;
+  outline: none;
+  /* background-color: transparent; */
+  color: black;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  position: relative;
+}
+
+.fa-solid {
+  margin-right: 6px;
+}
+
+#eye {
+  position: absolute;
+  /* bottom: 227px; */
+}
+#open-eye {
+  display: none;
+}
+.signup-btn {
+  margin: 40px auto 20px;
+  width: 80%;
+  display: block;
+  outline: none;
+  padding: 10px 0;
+  cursor: pointer;
+  font-size: 16px;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  background: #1d2b64; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #f8cdda,
+    #1d2b64
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #f8cdda,
+    #1d2b64
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#submit:hover {
+  background-color: white;
+}
+#already {
+  font-size: 12px;
+  text-align: center;
+}
