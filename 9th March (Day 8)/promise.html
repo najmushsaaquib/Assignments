@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promise</title>
+  </head>
+  <body></body>
+
+  <script>
+
+
+    // A promise is created
+    // Status - pending 
+    // Resolved - fulfilled use .then
+    // Reject - error use .catch
+
+
+    let momos = true;
+    let prom = new Promise(function (resolve, reject) {
+      if (momos) {
+        resolve("You can have Momos 🌟");
+      } else {
+        reject("You can not have Momos");
+      }
+    });
+
+    prom.then(function (response) {
+        console.log(response);
+    })
+
+    prom.catch(function (error) {
+        console.log('error:', error)
+
+    })
+
+
+    //.then, resolve() - Positive vibes
+    //.catch, reject() - Negative vibes
+
+
+    // console.log(prom)
+  </script>
+</html>
