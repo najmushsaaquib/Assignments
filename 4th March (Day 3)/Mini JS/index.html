@@ -10,6 +10,10 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.0.0/css/all.css"
+    />
     <title>Document</title>
   </head>
 
@@ -50,28 +54,31 @@
       transform: translateY(2px);
     }
 
-    #box{
+    #box {
       width: 90%;
       background-color: transparent;
       margin: auto;
       text-align: start;
       line-height: 1.8rem;
-
     }
-   
   </style>
 
   <body>
     <div id="buttons">
       <!--Create buttons namely “Scope”, “Hoisting”, ‘Constructor Functions’, ‘Prototype’ in index.html. Each button will have it's respective name as HTML id. For e.g Scope button will HTML id as "scope". ( Note: no capital letter in id )-->
 
-      <button id="scope" onclick="scopeFun()" >Scope</button>
-      <button id="hoisting" onclick="hoistingFun()" >Hoisting</button>
-      <button id="constructor" onclick="constructorFun()" >Constructor Functions</button>
-      <button id="prototype" onclick="prototypeFun()" >Prototype </button>
+      <button id="scope" onclick="scopeFun()">Scope</button>
+      <button id="hoisting" onclick="hoistingFun()">Hoisting</button>
+      <button id="constructor" onclick="constructorFun()">
+        Constructor Functions
+      </button>
+      <button id="prototype" onclick="prototypeFun()">Prototype</button>
 
+      <i
+        class="fa-solid fa-bell fa-shake fa-2x"
+        style="--fa-animation-duration: 3s"
+      ></i>
       <div id="box"></div>
-
     </div>
   </body>
 
