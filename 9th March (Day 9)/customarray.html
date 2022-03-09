@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.0.0/css/all.css"
+    />
+    <style>
+      .fa-5x {
+        margin: 8% 28%;
+      }
+
+      @media screen and (max-width: 415px) {
+        .fa-5x {
+          margin: 55px;
+        }
+      }
+    </style>
+    <title>Custom Array</title>
+  </head>
+  <body>
+    <div class="fa-5x">
+      <i class="fa-thin fa-bracket-square fa-beat" style="--fa-beat-scale: 1.1" ></i>
+      <i class="fa-thin fa-gear fa-spin"></i>
+      <i class="fa-thin fa-clock fa-spin"></i>
+      <i class="fa-solid fa-bell fa-shake" style="--fa-animation-duration: 2.5s"></i>
+      <i
+        class="fa-duotone fa-face-laugh-squint fa-shake"
+        style="--fa-animation-duration: 3s"
+      ></i>
+      <i class="fa-thin fa-bracket-square-right fa-beat" style="--fa-beat-scale: 1.1" "></i>
+    </div>
+  </body>
+
+  <script>
+
+    let arr = [1,2,2,3,4,6,4,6]
+    console.log('arr:', arr)
+
+    function myArr(){
+
+
+        Object.defineProperty(this, 'length', {
+            value:0,
+            writable:true,
+            enumerable:false,
+
+        })
+
+        for(let i=0; i<arguments.length; i++){
+
+            this[i] = arguments[i]
+        }
+
+        this.length = arguments.length
+
+
+    }
+
+    console.log(myArr)
+
+    /* ! Custom function which works as similar as arr.push() */
+
+    myArr.prototype.pushMe = function (value) {
+
+        let index = this.length ;
+        this[index] = value;
+        this.length++
+
+    }
+
+
+    /* ! Shows the first element of the Array*/
+    myArr.prototype.showElement = function () {
+
+       return this[0]
+        // return output
+    }
+
+
+    myArr.prototype.showArr = function () {
+
+        return  this[0]
+    // return output
+    }
+    
+    let hk = new myArr(1,2,3,4,5)
+    hk.pushMe("Hii")
+    console.log(hk.showElement())
+    console.log(hk)
+
+
+
+  </script>
+
+</html>
