@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <style>
+
+    #container {
+        display: grid;
+        grid-template-columns: repeat(4, 25%);
+        gap: 10px;
+    }
+
+    img {
+        width: 30%;
+    }
+
+    #container > div {
+        border: 1px solid black
+    }
+
+  </style>
+
+  <body>
+
+    <div id="container"></div>
+
+  </body>
+
+  <script>
+    //Car (tool) - Fetch;
+    // Destination - server
+    // road - url
+
+    // let x = fetch()
+    // console.log('x:', x)
+
+    //Why fetch returns promise
+
+    //1. You are going to server
+    //2. server is going to take some time?
+    //3. will it even talk back to me or not?
+
+    // These three points makes the logic why fetch returns promise
+
+    // let url = "https://fakestoreapi.com/products"
+
+    // let myPromise = fetch(url)
+
+    // myPromise.then(function(response) {
+    // console.log('response:', response)
+
+    //     return response.json()
+
+    // })
+    // .then(function(response) {
+    //     console.log('response:', response)
+
+    // })
+
+    let url = "https://fakestoreapi.com/products";
+
+    async function getData() {
+      try {
+        let res = await fetch(url);
+        let data = await res.json();
+        console.log("data:", data);
+
+        appendData(data)
+
+      } catch (err) {
+        console.log("err:", err);
+      }
+    }
+
+     getData();
+
+    let container = document.querySelector("#container")
+
+    function appendData(data) {
+
+
+        data.forEach(function(el) {
+
+         let div = document.createElement("div");   
+
+         let img = document.createElement("img")
+             img.src = el.image   
+
+         let title = document.createElement("p")
+             title.innerText = el.title
+
+         let desc = document.createElement("p")
+             desc.innerText = el.description
+
+         let price = document.createElement("p")   
+             price.innerText = el.price
+
+         
+         div.append(img,title,price,desc)    
+
+         container.append(div)
+
+        })
+
+
+    }
+
+  </script>
+</html>
