@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.0.0/css/all.css"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="city" />
+    <button onclick="getWeather()">Get Weather</button>
+    <div id="container">
+      <i class="fa-light fa-temperature-list fa-5x spin"></i>
+      <i
+        class="fa-thin fa-bell fa-5x fa-shake"
+        style="--fa-animation-duration: 2s"
+      ></i>
+    </div>
+  </body>
+
+  <script>
+    // let url = api.openweathermap.org/data/2.5/weather?q={city name}&appid={}
+
+    //3749a9a9c673d7eb0aabcf384b47aae1
+
+    let container = document.getElementById("container");
+
+    async function getWeather() {
+      try {
+        let city = document.getElementById("city").value;
+
+        let res = await fetch(
+          `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=3749a9a9c673d7eb0aabcf384b47aae1&units=metric`
+        );
+
+        let data = await res.json(); // res is here just a random stream, you can give any name you need
+        appendData(data);
+        console.log("data:", data);
+      } catch (err) {
+        console.log("err:", err);
+      }
+    }
+
+    function appendData(data) {
+      let name = document.createElement("h3");
+      name.innerText = `🏠 ${data.name} `;
+
+      let temp = document.createElement("h3");
+      temp.innerText = ` 🌡️ ${data.main.temp}`;
+
+      let pressure = document.createElement("h3");
+      pressure.innerText = ` 🔃 ${data.main.pressure}`;
+
+      let humidity = document.createElement("h3");
+      humidity.innerText = ` ⏳ ${data.main.humidity}`;
+
+      container.append(name, temp, pressure, humidity);
+    }
+  </script>
+</html>
