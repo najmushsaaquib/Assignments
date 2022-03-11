@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movies</title>
+    <style>
+      input {
+        width: 200px;
+      }
+
+      .movies {
+        height: 200px;
+        width: 206px;
+        border: solid 1px black;
+        border-top: none;
+        overflow: scroll;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" id="query" oninput="debounce(joint, 1000)" />
+
+    <div class="movies"></div>
+
+    <script>
+      let movies = document.querySelector(".movies");
+      let timerid;
+      // ! Gettng data from servers using API
+      async function searchMovie() {
+        try {
+          let input = document.querySelector("#query").value;
+          console.log("input:", input);
+
+          let res = await fetch(
+            `http://www.omdbapi.com/?apikey=eaf4b3f5&s=${input}`
+          );
+
+          let data = await res.json();
+          let moviesArr = data.Search;
+
+          return moviesArr;
+        } catch (error) {
+          console.log("error:", error);
+        }
+      }
+
+      //   appending the data which we collected
+
+      function appendMovie(data) {
+        console.log("data:", data);
+        movies.innerHTML = null;
+
+        data.forEach(function (el) {
+          let p = document.createElement("p");
+          p.innerHTML = el.Title;
+          movies.append(p);
+        });
+      }
+
+      // Making a join t function
+
+      async function joint() {
+        try {
+          let data = await searchMovie();
+
+          if (data === undefined) {
+            return false;
+          }
+
+          appendMovie(data);
+        } catch (error) {
+          console.log("error:", error);
+        }
+      }
+
+      function debounce(func, delay) {
+        if (timerid) {
+          clearTimeout(timerid);
+        }
+
+        timerid = setTimeout(function () {
+          func();
+        }, delay);
+      }
+    </script>
+  </body>
+</html>

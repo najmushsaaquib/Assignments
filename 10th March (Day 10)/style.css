@@ -103,6 +103,7 @@ body {
 #map {
   display: grid;
   place-items: center;
+  background-color: white;
 }
 
 iframe {
@@ -114,10 +115,8 @@ iframe {
 
 #wet {
   padding: 30px;
-}
-
-#wet {
   font-size: 25px;
+  /* background: url(https://wallpapercave.com/wp/qQa5Pd7.jpg); */
 }
 
 /* Forcast style starts here */
@@ -126,11 +125,28 @@ iframe {
   width: 85%;
   margin: 8% auto;
   height: 180px;
+  border-radius: 6px;
   box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
   grid-template-columns: repeat(8, 1fr);
   color: white;
   margin-top: 25px;
   margin-bottom: 35px;
+  /* place-items: center; */
+}
+
+#wrapper > div:nth-child(1) {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+#wrapper > div:nth-child(8) {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  border-right: 0.5px solid white;
+}
+
+#wrapper h2 {
+  color: black;
 }
 
 .box {
@@ -145,12 +161,23 @@ iframe {
 
 .day {
   font-size: 24px;
+  font-weight: bold;
 }
 
 .max {
   font-size: 18px;
+  font-weight: 700;
 }
 
 .min {
   font-size: 14px;
+}
+
+#wrapper i {
+  color: #e24068;
+}
+
+.fa-2x {
+  display: grid;
+  place-items: center;
 }

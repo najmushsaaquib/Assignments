@@ -2,18 +2,6 @@ let container = document.getElementById("wet");
 
 let date = new Date();
 console.log("date:", date);
-let newDay = date.getDay();
-console.log("newDay:", newDay);
-
-let dayObj = {
-  0: "Sun",
-  1: "Mon",
-  2: "Tue",
-  3: "Wed",
-  4: "Thu",
-  5: "Fri",
-  6: "Sat",
-};
 
 // ! This function cataches the data of the searched city
 
@@ -87,16 +75,27 @@ async function forCastMe(data) {
     appendForcast(newData);
   } catch (err) {
     console.log("err:", err);
-    alert("");
   }
 }
 
+let dayObj = {
+  0: "Sun",
+  1: "Mon",
+  2: "Tue",
+  3: "Wed",
+  4: "Thu",
+  5: "Fri",
+  6: "Sat",
+};
 // ! This function appends the forcast of the searched city
 
 function appendForcast(newData) {
   console.log("Hii", newData);
 
   document.querySelector("#wrapper").innerHTML = null; //
+
+  let newDay = date.getDay();
+  console.log("newDay:", newDay);
 
   newData.daily.map(function (el) {
     let box = document.createElement("div");
