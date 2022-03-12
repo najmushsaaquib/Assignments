@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.0.0/css/all.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Hotstar Clone</title>
+  </head>
+  <body>
+    <h1 class="firstH1">Welcome to Movie Library</h1>
+
+    <div class="search-container">
+      <input
+        type="search"
+        oninput="debounce(main, 1000)"
+        id="search"
+        placeholder="Search your favorite movies"
+        autocomplete="off"
+      />
+      <i class="fa-thin fa-magnifying-glass"></i>
+    </div>
+
+    <div class="list"></div>
+    <div class="imdb" id="here"></div>
+
+    <script src="main.js"></script>
+  </body>
+</html>

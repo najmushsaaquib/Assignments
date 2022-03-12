@@ -1,0 +1,130 @@
+:root {
+  --pmr-font: Poppins;
+  --movie-bg: rgb(73, 83, 107);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--pmr-font);
+}
+
+.firstH1 {
+  text-align: center;
+  margin-top: 25px;
+  font-size: 35px;
+}
+
+.search-container {
+  width: 550px;
+  height: 55px;
+  margin: 4% auto;
+  margin-bottom: 5px;
+  text-align: center;
+  background-color: white;
+  border-bottom: 2px solid tomato;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  border-radius: 4px;
+  top: 0;
+}
+
+#search {
+  width: 90%;
+  height: 95%;
+  outline: none;
+  border: none;
+  padding: 8px;
+}
+
+::placeholder {
+  font-size: 18px;
+}
+
+.list {
+  width: 550px;
+  height: 80vh;
+  margin: auto;
+  /* border: 1px solid black; */
+  border-top: none;
+  overflow: auto;
+  z-index: 100;
+}
+
+.box {
+  display: flex;
+  margin: 12px;
+  background-color: var(--movie-bg);
+  color: white;
+  padding: 4px;
+  border-radius: 3px;
+}
+
+.box p {
+  margin-left: 16px;
+  margin-top: 16px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.photo {
+  width: 30%;
+  height: 130px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.imdb {
+  display: grid;
+  height: 80vh;
+  width: 65%;
+  margin: 7% auto;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.imdb img {
+  width: 400px;
+}
+
+#rightDiv p {
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 2.7em;
+}
+
+#rightDiv h4 {
+  margin-top: 25px;
+  margin-bottom: 8px;
+}
+
+#rightDiv h4:last-child {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+/*  ! scroll bar styles starts from here */
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--movie-bg);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #b30000;
+}
+
+/*  ! scroll bar styles ends here */
