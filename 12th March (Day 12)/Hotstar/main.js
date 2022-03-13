@@ -137,3 +137,5 @@ function appendSingle(el) {
 
   singleMovieBox.append(leftDiv, rightDiv);
 }
+
+
