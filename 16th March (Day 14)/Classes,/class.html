@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ES6 Class</title>
+  </head>
+  <body></body>
+
+  <script>
+    class Person {
+      constructor(n, a) {
+        this.name = n;
+        this.age = a;
+      }
+
+      //   showName() {
+      //     console.log("showName:", showName);
+      //     console.log(this.name);
+      //   }
+    }
+
+    class Cat {
+      constructor(name) {
+        this.name = name;
+        this.species = "cat";
+        this.leg = 4;
+        this.fur = true;
+        this.special = true;
+      }
+    }
+
+    class Tiger extends Cat {
+      constructor(name) {
+        super(name);
+
+        this.speed = 60;
+      }
+    }
+
+    let tig = new Tiger("Bholu");
+    console.log("tig:", tig);
+
+    class myStack {
+      constructor() {
+        this.length = 0;
+        this.stack = [];
+      }
+
+      pushMe(...value) {
+        value.forEach((el) => {
+          this.stack.push(el);
+          this.length++;
+        });
+
+        console.log(this.stack);
+      }
+
+      removeMe() {
+        this.stack.pop();
+        this.length--;
+        console.log(this.stack);
+      }
+    }
+
+    let stak = new myStack();
+
+    stak.pushMe(9);
+    stak.pushMe(7);
+    stak.removeMe();
+    stak.pushMe(2,56,5,56,64,3,);
+  </script>
+</html>

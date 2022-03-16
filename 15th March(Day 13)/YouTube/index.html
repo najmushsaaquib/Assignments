@@ -4,99 +4,55 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <style>
-      h2 {
-        text-align: center;
-        margin: 3% auto;
-      }
-
-      #results {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 60px;
-      }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.0.0/css/all.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="" type="image/x-icon" />
     <title>Youtube</title>
   </head>
   <body>
-    <h2>Learning YouTube API</h2>
+    <header>
+      <!-- ! Navbar starts from here  -->
 
-    <h3>Youtube</h3>
+      <div id="nav">
+        <div class="left-nav nav-grid">
+          <i class="fa-solid fa-bars"></i>
+          <div class="left-logos">
+            <i class="fa-brands fa-youtube fa-1x"></i>
+            <span> YouTube </span>
+          </div>
+        </div>
+        <div class="mid-nav nav-grid">
+          <div id="search-div">
+            <input type="text" id="search" placeholder="Search for videos..." />
+            <button onclick="searchVideos()" class="search-btn">
+              <i class="fa-thin fa-magnifying-glass"></i>
+            </button>
 
-    <input type="text" id="search" placeholder="Search for videos..." />
-
-    <button onclick="searchVideos()">Search</button>
-
+            <button class="mic">
+              <i class="fa-solid fa-microphone"></i>
+            </button>
+          </div>
+        </div>
+        <div class="right-nav nav-grid"></div>
+      </div>
+    </header>
+    <hr />
+    <!-- ! Navbar ends here  -->
     <div id="results"></div>
+
+    <aside>
+      <div id="left-aside"></div>
+    </aside>
   </body>
 
-  <script>
-    // Youtube API - Reading document
-
-    // collecting Array of Object
-
-    // Appending the Data in DOM
-
-    // My API Key : AIzaSyDTr9EoUscFUXB6t-8AT76A1-bUam3C_iQ
-
-    //https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=standup%20comedy&key=[YOUR_API_KEY]
-
-    const resultDiv = document.getElementById("results");
-
-    const searchVideos = async () => {
-      try {
-        let inp = document.getElementById("search").value;
-
-        let res = await fetch(
-          `https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${inp}&key=AIzaSyDTr9EoUscFUXB6t-8AT76A1-bUam3C_iQ&maxResults=25`
-        );
-
-        let data = await res.json();
-
-        let videoArr = data.items;
-
-        appendVideos(videoArr);
-
-        console.log("data:", data);
-      } catch (error) {
-        console.log("error:", error);
-      }
-    };
-
-    // ! Possible mistakes
-    //1. async await not in pair
-    // 2. https
-    // 3. res.json()
-    // 4. seperate parameters using &
-    // 5. wrong destination
-    // 6. spelling mistake
-
-    // ! making function to append data
-
-    // we want to embed our video to our app - means we want to add video to our app -
-    // embed - <iframe width="560" height="315" src="https://www.youtube.com/embed/90JsrQwE5CA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-    // embed url - src="https://www.youtube.com/embed/90JsrQwE5CA"
-
-    const appendVideos = (videoArr) => {
-      resultDiv.innerHTML = null;
-
-      videoArr.forEach(({ snippet, id: videoId }) => {
-        let main = document.createElement("div");
-        main.setAttribute("id", "wrapper");
-
-        let title = document.createElement("p");
-        title.textContent = snippet.title;
-
-        let iframe = document.createElement("iframe");
-        iframe.src = `https://www.youtube.com/embed/${videoId}`;
-        iframe.height = "100%";
-        iframe.width = "100%";
-
-        main.append(iframe, title);
-
-        resultDiv.append(main);
-      });
-    };
-  </script>
+  <script src="main.js"></script>
 </html>
