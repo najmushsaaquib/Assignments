@@ -23,13 +23,18 @@
       <!-- ! Navbar starts from here  -->
 
       <div id="nav">
+        <!-- ! left div starts from here -->
+
         <div class="left-nav nav-grid">
-          <i class="fa-solid fa-bars"></i>
+          <i class="fa-light fa-bars fa-2x"></i>
           <div class="left-logos">
-            <i class="fa-brands fa-youtube fa-1x"></i>
-            <span> YouTube </span>
+            <i class="fa-brands fa-youtube fa-2x"></i>
+            <span> YouTube <sup>IN</sup> </span>
           </div>
         </div>
+
+        <!-- ! Mid div starts from here -->
+
         <div class="mid-nav nav-grid">
           <div id="search-div">
             <input type="text" id="search" placeholder="Search for videos..." />
@@ -42,16 +47,34 @@
             </button>
           </div>
         </div>
-        <div class="right-nav nav-grid"></div>
+
+        <!-- ! Right div starts from here -->
+
+        <div class="right-nav nav-grid">
+          <div class="video-icon">
+            <i class="fa-thin fa-video-plus fa-2x"></i>
+          </div>
+          <div class="bell-icon">
+            <i class="fa-thin fa-bell fa-2x"></i>
+          </div>
+          <div class="profile-icon">
+            <i class="fa-thin fa-circle fa-2x"></i>
+          </div>
+        </div>
       </div>
     </header>
-    <hr />
     <!-- ! Navbar ends here  -->
-    <div id="results"></div>
+    <!-- 
+    <div id="ribbon">
+    </div> -->
 
-    <aside>
-      <div id="left-aside"></div>
-    </aside>
+    <!-- ! Main content starts from here -->
+    <div id="content">
+      <div class="left-content"></div>
+      <div class="right-content">
+        <div id="results"></div>
+      </div>
+    </div>
   </body>
 
   <script src="main.js"></script>
