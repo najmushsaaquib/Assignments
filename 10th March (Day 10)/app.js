@@ -7,7 +7,7 @@ console.log("date:", date);
 
 async function getWeather() {
   try {
-    let city = await document.getElementById("weather").value;
+    let city = document.getElementById("weather").value;
     console.log("city:", city);
 
     let res = await fetch(
@@ -90,7 +90,6 @@ let dayObj = {
 // ! This function appends the forcast of the searched city
 
 function appendForcast(newData) {
-  console.log("Hii", newData);
 
   document.querySelector("#wrapper").innerHTML = null; //
 
