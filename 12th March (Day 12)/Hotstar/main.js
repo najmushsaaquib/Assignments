@@ -10,7 +10,9 @@ async function searchMovie() {
     );
 
     let bucket = await res.json();
+
     let moveiArr = bucket.Search;
+    
     return moveiArr;
   } catch (error) {
     console.log("error:", error);
@@ -41,6 +43,10 @@ function debounce(funn, delay) {
     funn();
   }, delay);
 }
+
+
+
+
 
 function displayList(arr) {
   listBox.innerHTML = null;
