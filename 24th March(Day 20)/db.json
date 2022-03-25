@@ -1,0 +1,15 @@
+{
+    "posts": [
+      {
+        "id": "1",
+        "name": "John Snow"
+
+      },
+      {
+        "id": "2",
+        "name": "John Snow"
+
+      }
+    ]
+    
+  }

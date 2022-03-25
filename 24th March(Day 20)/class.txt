@@ -1,0 +1,14 @@
+GET - get the data;
+POST - post the data;
+PUT - 
+PATCH -
+
+CRUD 
+Create - POST
+Read - GET
+Update - PUT/PATCH
+Delete - DELETE
+
+Update:
+PUT - updates by replacing everything //
+PATCH - updates by making small modifications //
